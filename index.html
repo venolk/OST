@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111321">
+  <meta name="description" content="StudyOS — your personal study and routine management workspace">
+  <title>StudyOS — Study Management</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#dashboard" aria-label="StudyOS dashboard">
+        <span class="brand-mark">S</span>
+        <span class="brand-copy"><strong>StudyOS</strong><small>PERSONAL STUDY SPACE</small></span>
+      </a>
+      <div class="sidebar-label">WORKSPACE</div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-link active" data-view="dashboard"><span class="nav-icon">▦</span> Dashboard</button>
+        <button class="nav-link" data-view="planner"><span class="nav-icon">▣</span> Routine planner</button>
+        <button class="nav-link" data-view="subjects"><span class="nav-icon">◫</span> Subjects & chapters</button>
+        <button class="nav-link" data-view="history"><span class="nav-icon">☷</span> Study history</button>
+        <button class="nav-link" data-view="notes"><span class="nav-icon">▤</span> Notes & resources</button>
+        <button class="nav-link" data-view="analytics"><span class="nav-icon">◩</span> Analytics</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="focus-mini-card">
+          <div class="mini-orb">◷</div>
+          <div><strong>Stay focused</strong><small>One session at a time.</small></div>
+          <button class="icon-button mini-start" data-action="open-timer" aria-label="Start focus timer">↗</button>
+        </div>
+        <button class="nav-link settings-link" data-view="settings"><span class="nav-icon">⚙</span> Settings</button>
+        <div class="sidebar-footer">LOCAL-FIRST · YOUR DATA STAYS ON THIS DEVICE</div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-button mobile-menu" data-action="toggle-sidebar" aria-label="Open menu">☰</button>
+          <div><div class="eyebrow" id="top-eyebrow">YOUR WORKSPACE</div><h1 id="page-title">Dashboard</h1></div>
+        </div>
+        <div class="topbar-actions">
+          <div class="live-date"><span class="status-dot"></span><span id="today-label">Today</span></div>
+          <button class="icon-button" data-action="toggle-theme" aria-label="Toggle theme" title="Toggle theme">◐</button>
+          <button class="button button-primary button-small" data-action="open-routine">＋ <span>New session</span></button>
+          <button class="avatar" title="StudyOS">S</button>
+        </div>
+      </header>
+
+      <div class="content-wrap" id="app-content" aria-live="polite">
+        <section class="loading-state"><div class="loader"></div><p>StudyOS প্রস্তুত হচ্ছে...</p></section>
+      </div>
+    </main>
+  </div>
+
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <button class="mobile-nav-link active" data-view="dashboard"><span>▦</span><small>Home</small></button>
+    <button class="mobile-nav-link" data-view="planner"><span>▣</span><small>Routine</small></button>
+    <button class="mobile-nav-link" data-view="history"><span>☷</span><small>History</small></button>
+    <button class="mobile-nav-link" data-view="notes"><span>▤</span><small>Notes</small></button>
+    <button class="mobile-nav-link" data-view="settings"><span>⚙</span><small>Settings</small></button>
+  </nav>
+
+  <div class="modal-root" id="modal-root"></div>
+  <div class="toast-region" id="toast-region" aria-live="assertive" aria-atomic="true"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
